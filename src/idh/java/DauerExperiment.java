@@ -15,7 +15,6 @@ public class DauerExperiment {
 		
 		TreeList<Integer> treeList = new TreeList<Integer>();
 		befüllen(treeList);
-		//System.out.println(treeList);
 		einfügen(treeList);
 		
 		LinkedList<Integer> linkedList = new LinkedList<Integer>();

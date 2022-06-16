@@ -13,41 +13,46 @@ public class DauerExperiment {
 
 	public static void main(String[] args) {
 		
+		//TreeListe anlegen
 		TreeList<Integer> treeList = new TreeList<Integer>();
 		befüllen(treeList);
 		einfügen(treeList);
 		
+		//LinkedListe anlegen
 		LinkedList<Integer> linkedList = new LinkedList<Integer>();
 		befüllen(linkedList);
 		einfügen(linkedList);
 		
+		//ArrayListe anlegen
 		ArrayList<Integer> arrayList = new ArrayList<Integer>();
 		befüllen(arrayList);
 		einfügen(arrayList);
 
 	}
 
+	//100.000 zufalsszahlen in die Liste hinzufügen 
 	public static void befüllen(List<Integer> l) {
 		Random zufallsZahlen = new Random();
 		
-		for(int i = 0; i <= 10; i++) {
+		for(int i = 0; i <= 100000; i++) {
 			l.add(zufallsZahlen.nextInt(100000));
 		}
 	}
 	
+	//weitere 10.000 zufallszahlen hinzufügen
 	public static long einfügen(List<Integer> l) {
 		Random zufallsZahlen = new Random();
 		
-		LocalTime start = java.time.LocalTime.now();
+		long start = System.currentTimeMillis();  //einmal die Zeit davor nehmen
 		
 		for (int i = 0; i <= 10000; i++) {
 			
 			l.add(zufallsZahlen.nextInt(10000));
 		}
 			
-	        LocalTime ende = java.time.LocalTime.now();
+	        long ende = System.currentTimeMillis();  //und dann die Zeit danach
 	        
-	        long dauer = Duration.between(start, ende).toMillis();
+	        long dauer = ende - start;
 	        
 	        System.out.println("Es dauert " + dauer + "ms 10000 neue Zufalsszahlen einzufügen");
 

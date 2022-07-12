@@ -7,7 +7,7 @@ package idh.java;
 
 	import org.apache.commons.collections4.list.TreeList;
 
-	public class test {
+	public class exercise10 {
 
 		public static void main(String[] args) {
 			
